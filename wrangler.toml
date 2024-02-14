@@ -1,0 +1,4 @@
+name = "react-hono-vite-workers"
+compatibility_date = "2024-02-14"
+
+main = "src/server.ts"
