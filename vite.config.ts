@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
     return {
       build: {
         plugins: [react()],
+        emptyOutDir: false,
       },
     };
   } else {
