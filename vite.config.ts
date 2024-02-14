@@ -2,14 +2,23 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  build: {
-    rollupOptions: {
-      input: "src/server.ts",
-      output: {
-        entryFileNames: "_worker.js",
+export default defineConfig(({ mode }) => {
+  if (mode == "client") {
+    return {
+      build: {
+        plugins: [react()],
       },
-    },
-  },
-  plugins: [react()],
+    };
+  } else {
+    return {
+      build: {
+        rollupOptions: {
+          input: ["src/server.ts"],
+          output: {
+            entryFileNames: "_worker.js",
+          },
+        },
+      },
+    };
+  }
 });
