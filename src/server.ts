@@ -4,3 +4,5 @@ import App from "./App";
 
 const app = new Hono();
 app.get("/", ssr(App));
+
+export default app;
