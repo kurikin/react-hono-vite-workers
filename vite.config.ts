@@ -14,9 +14,9 @@ export default defineConfig(({ mode }) => {
     return {
       build: {
         rollupOptions: {
-          input: ["src/server.ts"],
+          input: "src/server.ts",
           output: {
-            entryFileNames: "_worker.js",
+            entryFileNames: "_workers.js",
           },
         },
       },
