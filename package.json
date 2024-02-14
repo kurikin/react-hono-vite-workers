@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --config vite.config.js",
-    "wrangler": "wrangler dev --local --live-reload .src/server.ts",
-    "deploy": "wrangler deploy src/server.ts"
+    "build": "vite build --config vite.config.js",
+    "deploy": "wrangler pages deploy dist"
   },
   "dependencies": {
     "hono": "^4.0.1",
